@@ -1,0 +1,9 @@
+@import '../../variables';
+
+.app{
+    width: 100%;
+    background-color: $color-dark-blue;
+    display: flex;
+    position: fixed;
+    height: 100%;
+}

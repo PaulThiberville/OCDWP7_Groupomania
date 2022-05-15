@@ -1,0 +1,61 @@
+@import '../../variables';
+
+.post{
+    margin: 10px;
+
+    .main{
+        width: 100%;
+        max-width: 600px;
+        margin: 10px 0;
+        padding-left: 60px;
+
+        .link{
+            color: $color-white;
+            text-decoration: none;
+        }
+
+        .mainText{
+            border-left: solid 4px $color-grey;
+            margin: 10px 0 20px 0;
+            padding: 10px;
+            background-color: $color-black;
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+        .mainImage{
+            width: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+        }   
+    }
+
+    .footer{
+        width: 100%;
+        padding-bottom: 10px;
+        padding-left: 60px;
+        border-bottom: solid 4px $color-grey;
+        display: flex;
+        gap:10px;
+        align-items: center;
+        justify-content: space-between;
+
+        .footerButtonsContainer{
+            display: flex;
+            gap: 10px;
+
+            .footerButton{
+                color: $color-white;
+            }
+    
+            .footerButtonLiked{
+                color: $color-blue;
+            }
+        }
+
+        .date{
+            font-size: 16px;
+            justify-self: flex-end;
+            color: $color-light-grey;
+        }
+    }
+}

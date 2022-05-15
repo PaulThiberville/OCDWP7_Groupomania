@@ -1,0 +1,28 @@
+@import '../../variables';
+
+.comment{
+    margin: 10px;
+    padding-left: 70px;
+    padding-right: 10px;
+    width: 100%;
+
+    .text{
+        border-left: solid 4px $color-grey;
+        margin: 10px 0 20px 60px;
+        padding: 10px;
+        background-color: $color-black;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+        width: 100%;
+        max-width: 600px;
+    }
+
+    .date{
+        font-size: 16px;
+        width: 100%;
+        text-align: end;
+        color: $color-light-grey;
+        border-bottom: solid 4px $color-grey;
+        padding-bottom: 10px;
+    }
+}

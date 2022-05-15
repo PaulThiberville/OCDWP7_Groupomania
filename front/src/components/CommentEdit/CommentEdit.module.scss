@@ -1,0 +1,14 @@
+@import '../../variables';
+
+.headerButtons{
+    display: flex;
+    align-items: center;
+    gap:10px;
+
+    .headerButton{
+        color: $color-light-grey;
+    }
+    .headerButton:hover{
+        color: $color-white;
+    }
+}

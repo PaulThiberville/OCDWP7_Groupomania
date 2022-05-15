@@ -1,0 +1,29 @@
+@import '../../variables';
+
+.contentHeader{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .headerInfos{
+        display: flex;
+        align-items: center;
+        gap:10px;
+        color: $color-white;
+        text-decoration: none;
+        font-size: 18px;
+
+        .avatar{
+            height: 50px;
+            width: 50px;
+            object-fit: cover;
+            border-radius: 100%;
+            background-color: $color-blue;
+        }
+
+        &:hover .name{
+                color: $color-blue;
+        }
+    }
+}
