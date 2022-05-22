@@ -1,44 +1,46 @@
-import React, { useEffect, useState } from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
+import React, { useEffect } from "react";
+import { useParams } from "react-router-dom";
 
-import Post from '../Post/Post'
-import Loader from '../Loader/Loader'
-import Comments from '../Comments/Comments'
+import Post from "../Post/Post";
+import Comments from "../Comments/Comments";
 
-import { getOnePost, deletePost } from '../../services/posts'
+import { getOnePost } from "../../services/posts";
 
-import style from './PostView.module.scss'
-import CreateComment from '../CreateComment/CreateComment'
-import { useDispatch, useSelector } from 'react-redux'
+import style from "./PostView.module.scss";
+import CreateComment from "../CreateComment/CreateComment";
+import { useDispatch, useSelector } from "react-redux";
 
-
+//This component is used to display a post with comments and comment creation
 export default function PostView() {
-  const params = useParams()
-  const post = useSelector(state => state.post)
-  const dispatch = useDispatch()
+  const params = useParams();
+  const post = useSelector((state) => state.post);
+  const dispatch = useDispatch();
 
-  const getPost = async ()=>{
-    const currentPost = await getOnePost(params.id)
-    if(currentPost){
+  //Call services to get post from api then ask to redux to add it to state
+  const getPost = async () => {
+    const currentPost = await getOnePost(params.id);
+    if (currentPost) {
       dispatch({
-        type:"post/setPost",
-        payload: currentPost
-      })
+        type: "post/setPost",
+        payload: currentPost,
+      });
     }
-  }
+  };
 
-  const clearPost = ()=>{
+  //Used to clean redux state
+  const clearPost = () => {
     dispatch({
-      type:"post/clearPost"
-    })
-  }
+      type: "post/clearPost",
+    });
+  };
 
-  useEffect(()=>{
-    getPost().catch(console.error)
-    return clearPost
-  },[])
+  //Called one time
+  useEffect(() => {
+    getPost().catch(console.error);
+    return clearPost;
+  }, []);
 
-  if(post === null) return null
+  if (post === null) return null;
 
   return (
     <div className={style.postView}>
@@ -46,5 +48,5 @@ export default function PostView() {
       <CreateComment postId={params.id} />
       <Comments postId={params.id} />
     </div>
-  )
+  );
 }

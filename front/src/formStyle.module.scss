@@ -1,44 +1,88 @@
-.input,.textarea{
-    background-color: #15202B;
-    color: white;
-    border: solid 4px #20303C;
-    border-radius: 15px;
-    outline: none;
-    padding: 10px;
-    font-size: 16px;
-    box-shadow: 0 0 0 30px #15202B inset !important;
-    user-select:text;
+@import "./variables";
+
+.input,
+.textarea {
+  background-color: #15202b;
+  color: white;
+  border: solid 4px #20303c;
+  border-radius: 15px;
+  outline: none;
+  padding: 10px;
+  font-size: 16px;
+  box-shadow: 0 0 0 30px #15202b inset;
+  user-select: text;
 }
 
-.form{
-    display:flex;
-    flex-direction: column;
-    gap: 10px;
+input:-webkit-autofill {
+  -webkit-text-fill-color: $color-white;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.form div{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 10px
+.commentForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0 60px;
+  padding: 10px;
 }
 
-.form div input{
-    width: 100%;
-}
-.fileInput{
-    display: none;
-}
-
-.fileLabel{
-    cursor: pointer;
+.form div,
+.commentForm div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
+.form div label,
+.commentForm div label {
+  font-weight: bold;
+  font-size: 18px;
+}
 
-.preview{
-    width: 100%;
-    max-width: 500px;
-    object-fit: contain;
-    margin: 0 auto;
-    border-radius: 15px;
+.input {
+  width: 100%;
+}
+.fileInput {
+  display: none;
+}
+
+.fileLabel {
+  cursor: pointer;
+  border: solid 4px $color-grey;
+  border-radius: 15px;
+  width: max-content;
+  margin: 0 auto;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.preview {
+  width: 100%;
+  max-width: 500px;
+  object-fit: contain;
+  margin: 0 auto;
+  border-radius: 15px;
+  background-color: $color-black;
+}
+
+.submit {
+  width: max-content;
+  margin: 0 auto;
+  padding: 10px;
+  border: solid 4px $color-grey;
+  border-radius: 15px;
+  background-color: $color-dark-blue;
+  color: $color-white;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.submit:hover {
+  color: $color-blue;
+  cursor: pointer;
 }

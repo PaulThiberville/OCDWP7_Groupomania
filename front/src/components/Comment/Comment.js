@@ -1,30 +1,29 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from "react";
+import Loader from "../Loader/Loader";
+import ContentHeader from "../ContentHeader/ContentHeader";
+import CommentEdit from "../CommentEdit/CommentEdit";
+import style from "./Comment.module.scss";
+import { getOneUser } from "../../services/users";
 
-import { getOneComment, deleteComment } from '../../services/comments'
+//This component is used to display a comment
+export default function Comment({ comment }) {
+  const [user, setUser] = useState();
 
-import Loader from '../Loader/Loader'
-import ContentHeader from '../ContentHeader/ContentHeader'
-import CommentEdit from '../CommentEdit/CommentEdit'
-
-import style from './Comment.module.scss'
-import { getOneUser } from '../../services/users'
-
-export default function Comment({comment}) {
-  const [user, setUser] = useState()
-
-    const getuser = async ()=>{
-        const currentUser = await getOneUser(comment.UserId)
-        if(currentUser){
-            setUser(currentUser)
-        }
+  //Call user service to get comment's user
+  const getUser = async () => {
+    const currentUser = await getOneUser(comment.UserId);
+    if (currentUser) {
+      setUser(currentUser);
     }
+  };
 
-    useEffect(()=>{
-        getuser().catch(console.error)
-    },[])
+  //Called only one time
+  useEffect(() => {
+    getUser().catch(console.error);
+  }, []);
 
-  if(!user){
-    return <Loader />
+  if (!user) {
+    return <Loader />;
   }
 
   return (
@@ -33,7 +32,9 @@ export default function Comment({comment}) {
         <CommentEdit user={user} comment={comment} />
       </ContentHeader>
       <p className={style.text}>{comment.text}</p>
-      <p className={style.date}>{new Date(comment.createdAt).toLocaleString()}</p>
+      <p className={style.date}>
+        {new Date(comment.createdAt).toLocaleString()}
+      </p>
     </div>
-  )
+  );
 }
