@@ -20,10 +20,8 @@ export default function RegisterForm() {
   const onSubmit = async ({ firstName, lastName, email, password }) => {
     //Call services to create user
     const registred = await registerUser(firstName, lastName, email, password);
-    if (!registred) console.log("ERROR REGISTER");
     //Newly created user will be logged in
     const user = await loginUser(email, password);
-    if (!user) console.log("ERROR LOGIN");
     if (user) {
       dispatch({
         type: "user/setUser",

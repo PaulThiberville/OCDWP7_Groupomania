@@ -48,7 +48,6 @@ const homeSlice = createSlice({
     likePost: (state, action) => {
       state.posts.forEach((post) => {
         if (post.id === action.payload.id) {
-          console.log("likePost:", action.payload);
           post.likes = action.payload.likes;
           post.usersLiked = action.payload.usersLiked;
         }
@@ -189,7 +188,6 @@ const profileSlice = createSlice({
       if (state.posts) {
         state.posts.forEach((post) => {
           if (post.id === action.payload.id) {
-            console.log("likePost:", action.payload);
             post.likes = action.payload.likes;
             post.usersLiked = action.payload.usersLiked;
           }

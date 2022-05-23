@@ -19,7 +19,6 @@ export default function EditPostForm({ postId, onClose, currentText }) {
   const onSubmit = async ({ text, file }) => {
     const newText = text === "" ? currentText : text;
     const updatedPost = await editPost(newText, file[0], postId);
-    console.log("updatedPost:", updatedPost);
     if (updatedPost) {
       dispatch({
         type: "home/editPost",

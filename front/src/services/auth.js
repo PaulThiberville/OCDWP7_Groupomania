@@ -4,7 +4,6 @@ exports.handleRefresh = async () => {
   const user = JSON.parse(localStorage.getItem("user"));
   if (user) {
     if (parseInt(user.expiresAt) <= Date.now()) {
-      console.log("Refreshing token !");
       await refresh();
     }
   }
@@ -63,10 +62,6 @@ exports.registerUser = async (firstName, lastName, email, password) => {
       },
       body: JSON.stringify({ firstName, lastName, email, password }),
     });
-    if (rawResponse.ok) {
-      const response = await rawResponse.json();
-      return console.log(response);
-    }
   } catch (error) {
     console.log(error);
   }
@@ -86,7 +81,6 @@ exports.logout = async () => {
     });
     if (rawResponse.ok) {
       const response = await rawResponse.json();
-      console.log(response);
     }
   } catch (error) {
     console.log(error);
