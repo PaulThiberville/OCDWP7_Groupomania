@@ -12,9 +12,9 @@ Go to the desired location of the project in your terminal then run the followin
 
 In your terminal, navigate to the project folder then run the following commands :
 
-    cd ../front
+    cd front
     npm install
-    cd back
+    cd ../back
     npm install
 
 # Configuration
