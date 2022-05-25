@@ -8,7 +8,7 @@ Go to the desired location of the project in your terminal then run the followin
 
     git clone https://github.com/PaulThiberville/groupomania
 
-# Install
+# Installation
 
 In your terminal, navigate to the project folder then run the following commands :
 
@@ -17,7 +17,9 @@ In your terminal, navigate to the project folder then run the following commands
     cd back
     npm install
 
-Now you have to add the ".env" file in the back folder.
+# Configuration
+
+Add the ".env" file in the back folder.
 
     DB_USERNAME=dbUsername
     DB_PASSWORD=dbPassword
@@ -28,6 +30,14 @@ Now you have to add the ".env" file in the back folder.
     ADMIN_PASSWORD=adminPassword
 
 > This is an exemple of the ."env" file with placeholders
+
+Change DB_USERNAME , DB_PASSWORD, and DB_DATABASE to connect a Database.
+
+Run the following command two times in your terminal. And paste the two values to ACCES_TOKEN_SECRET and REFRESH_TOKEN_SECRET.
+
+    node -e "console.log(require('crypto').randomBytes(256).toString('base64'));"
+
+The final step is to define ADMIN_EMAIL and ADMIN_PASSWORD with desired values.
 
 # Start
 
