@@ -71,13 +71,16 @@ exports.getAllByPostId = async (req, res) => {
 };
 
 /**
- * This endpoint is used to edit a comment. It return the edited comment.
+ * This endpoint is used to edit a comment.
+ * It return the edited comment.
  ** req.body.text : New content of the comment
  ** req.params.id : Id of comment
  */
 exports.update = async (req, res) => {
   try {
-    const comment = await db.Comment.findOne({ where: { id: req.params.id } });
+    const comment = await db.Comment.findOne({
+      where: { id: req.params.id },
+    });
     await comment.update({ text: req.body.text });
     return res.status(200).json(comment);
   } catch {

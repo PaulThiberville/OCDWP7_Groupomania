@@ -4,7 +4,7 @@ import { createComment } from "../../services/comments";
 import { useForm } from "react-hook-form";
 import formStyle from "../../formStyle.module.scss";
 
-//This component is used into a <Modal /> component to create a new comment
+//This component is used to create a new comment
 export default function CreateComment({ postId }) {
   const dispatch = useDispatch();
 
@@ -13,6 +13,7 @@ export default function CreateComment({ postId }) {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm();
 
   //Call services then redux to add comment
@@ -27,6 +28,7 @@ export default function CreateComment({ postId }) {
         type: "comments/addComment",
         payload: comment,
       });
+      reset();
     }
   };
 
@@ -44,6 +46,7 @@ export default function CreateComment({ postId }) {
           required={true}
           minLength={1}
           maxLength={250}
+          autoComplete="off"
           {...register("text")}
         />
       </div>

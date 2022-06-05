@@ -55,6 +55,7 @@ export default function CreatePostForm({ onClose }) {
           required={true}
           minLength={1}
           maxLength={250}
+          autoComplete="off"
           {...register("text")}
         />
       </div>

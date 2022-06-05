@@ -57,6 +57,7 @@ export default function EditPostForm({ postId, onClose, currentText }) {
           required={true}
           minLength={1}
           maxLength={250}
+          autoComplete="off"
           {...register("text")}
         />
       </div>

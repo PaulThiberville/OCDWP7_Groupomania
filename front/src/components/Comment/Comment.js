@@ -12,9 +12,7 @@ export default function Comment({ comment }) {
   //Call user service to get comment's user
   const getUser = async () => {
     const currentUser = await getOneUser(comment.UserId);
-    if (currentUser) {
-      setUser(currentUser);
-    }
+    if (currentUser) setUser(currentUser);
   };
 
   //Called only one time
@@ -22,9 +20,7 @@ export default function Comment({ comment }) {
     getUser().catch(console.error);
   }, []);
 
-  if (!user) {
-    return <Loader />;
-  }
+  if (!user) return <Loader />;
 
   return (
     <div className={style.comment}>

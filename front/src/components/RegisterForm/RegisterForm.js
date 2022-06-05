@@ -45,8 +45,8 @@ export default function RegisterForm() {
           required={true}
           minLength={2}
           maxLength={20}
-          pattern="^[A-Za-z]+$"
-          title="First name should only contain letters. e.g. John"
+          pattern="^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$"
+          title="First name should only contain letters. e.g. John D'Largy-Smith"
           {...register("firstName")}
         />
       </div>
@@ -59,8 +59,8 @@ export default function RegisterForm() {
           required={true}
           minLength={2}
           maxLength={20}
-          pattern="^[A-Za-z]+$"
-          title="Last name should only contain letters. e.g. John"
+          pattern="^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$"
+          title="Last name should only contain letters. e.g. John D'Largy-Smith"
           {...register("lastName")}
         />
       </div>
