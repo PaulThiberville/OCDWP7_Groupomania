@@ -31,7 +31,7 @@ Add the ".env" file in the back folder.
 
 > This is an exemple of the ."env" file with placeholders
 
-Change DB_USERNAME , DB_PASSWORD, and DB_DATABASE to connect a Database.
+Change DB_USERNAME , DB_PASSWORD, and DB_DATABASE to connect a mySQL Database.
 
 Run the following command two times in your terminal. And paste the two values to ACCES_TOKEN_SECRET and REFRESH_TOKEN_SECRET.
 
