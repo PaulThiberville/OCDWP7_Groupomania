@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useDispatch } from "react-redux";
 import { editComment } from "../../services/comments";
 import { useForm } from "react-hook-form";
@@ -7,11 +7,7 @@ import formStyle from "../../formStyle.module.scss";
 //This component is used into a <Modal /> component to edit a comment
 export default function EditCommentForm({ comment, onClose, currentText }) {
   //We use reak-hook-form UseForm hook to make binding easy and trigger onSubmit when our form is valid
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  const { register, handleSubmit } = useForm();
   const dispatch = useDispatch();
 
   //Call services then redux to edit comment
@@ -29,7 +25,7 @@ export default function EditCommentForm({ comment, onClose, currentText }) {
 
   return (
     <form
-      className={formStyle.submit}
+      className={formStyle.form}
       name="editCommentForm"
       onSubmit={handleSubmit(async (data) => await onSubmit(data))}
     >

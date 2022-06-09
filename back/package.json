@@ -2,10 +2,12 @@
   "name": "groupomania-back",
   "version": "1.0.0",
   "description": "Backend application for Groupomania's social network",
-  "main": "server.js",
+  "main": "concurrently --kill-others \"npm run authServer\" \"npm run socialServer\"",
   "scripts": {
-    "dev": "nodemon server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "authServer": "node authServer.js",
+    "socialServer": "node socialServer.js",
+    "start": "concurrently --kill-others \"npm run authServer\" \"npm run socialServer\""
   },
   "author": "paul.thiberville@live.fr",
   "license": "ISC",
@@ -23,6 +25,6 @@
     "sequelize-cli": "^6.4.1"
   },
   "devDependencies": {
-    "concurrently": "^7.0.0"
+    "concurrently": "^7.2.1"
   }
 }

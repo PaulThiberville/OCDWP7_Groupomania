@@ -8,11 +8,7 @@ import formStyle from "../../formStyle.module.scss";
 export default function EditProfileForm({ profile, onClose }) {
   //We use reak-hook-form UseForm hook to make binding easy and trigger onSubmit when our form is valid
   const dispatch = useDispatch();
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  const { register, handleSubmit } = useForm();
   const [preview, setPreview] = useState();
 
   //Call services then redux to edit profile

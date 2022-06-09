@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import { loginUser } from "../../services/auth";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
@@ -9,11 +9,7 @@ import formStyle from "../../formStyle.module.scss";
 export default function LoginForm() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  const { register, handleSubmit } = useForm();
 
   //We use reak-hook-form UseForm hook to make binding easy and trigger onSubmit when our form is valid
   const onSubmit = async ({ email, password }) => {

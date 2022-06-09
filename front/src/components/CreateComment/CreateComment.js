@@ -9,12 +9,7 @@ export default function CreateComment({ postId }) {
   const dispatch = useDispatch();
 
   //We use reak-hook-form UseForm hook to make binding easy and trigger onSubmit when our form is valid
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    reset,
-  } = useForm();
+  const { register, handleSubmit, reset } = useForm();
 
   //Call services then redux to add comment
   const onSubmit = async ({ text }) => {

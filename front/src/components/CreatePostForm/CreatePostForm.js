@@ -9,11 +9,7 @@ export default function CreatePostForm({ onClose }) {
   const dispatch = useDispatch();
 
   //We use reak-hook-form UseForm hook to make binding easy and trigger onSubmit when our form is valid
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  const { register, handleSubmit } = useForm();
 
   const [preview, setPreview] = useState();
 

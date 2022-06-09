@@ -10,16 +10,12 @@ import { registerUser, loginUser } from "../../services/auth";
 export default function RegisterForm() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  const { register, handleSubmit } = useForm();
 
   //We use reak-hook-form UseForm hook to make binding easy and trigger onSubmit when our form is valid
   const onSubmit = async ({ firstName, lastName, email, password }) => {
     //Call services to create user
-    const registred = await registerUser(firstName, lastName, email, password);
+    await registerUser(firstName, lastName, email, password);
     //Newly created user will be logged in
     const user = await loginUser(email, password);
     if (user) {
