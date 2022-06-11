@@ -1,3 +1,16 @@
+# What is it ?
+
+This project contain back end and front end applications for a social network for project 7 of Openclassrooms Web developper path
+
+https://openclassrooms.com/fr/paths/185/projects/677/assignment
+
+Main features:
+
+- Creating and managing users
+- User authentication and permissions
+- Creating and managing posts with text and images
+- Creating and managing comments
+
 # What you should know
 
 This project use environement variables. You should add an extra file named ".env" to configure them. This file is not included in this repository.
@@ -6,7 +19,7 @@ This project use environement variables. You should add an extra file named ".en
 
 Go to the desired location of the project in your terminal then run the following command :
 
-    git clone https://github.com/PaulThiberville/groupomania
+    git clone https://github.com/PaulThiberville/OCDWP7_Groupomania
 
 # Installation
 
@@ -37,7 +50,9 @@ Run the following command two times in your terminal. And paste the two values t
 
     node -e "console.log(require('crypto').randomBytes(256).toString('base64'));"
 
-The final step is to define ADMIN_EMAIL and ADMIN_PASSWORD with desired values.
+Define ADMIN_EMAIL and ADMIN_PASSWORD with desired values.
+
+Finally, add a folder named "images" in the back folder.
 
 # Start
 
